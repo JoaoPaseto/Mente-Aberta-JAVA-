@@ -11,13 +11,19 @@ public class TesteSistema {
 
     public static void main(String[] args) {
 
-        // Solicita o nome do usuário e apresenta a mensagem inicial
+        // CADASTRO DO USUÁRIO
         String nome = EntradaDados.texto("Digite seu nome:");
-        EntradaDados.mensagem("Bem-vindo ao Mente Aberta, " + nome + "!");
+        String email = EntradaDados.texto("Digite seu e-mail:");
+        String cpf = EntradaDados.texto("Digite seu CPF:");
 
-        // Registra o início da execução no console do IntelliJ
+        // CRIAR OBJETO USUÁRIO
+        Usuario novoUsuario = new Usuario(nome, email, cpf);
+
+        // BOAS-VINDAS
+        EntradaDados.mensagem("Bem-vindo ao Mente Aberta, " + novoUsuario.getNome() + "!");
+
         System.out.println("===== MENTE ABERTA =====");
-        System.out.println("Usuário: " + nome);
+        System.out.println("Usuário: " + novoUsuario.getNome());
         System.out.println("Sistema iniciado!");
 
         // Lista principal que armazena cursos, vagas,
